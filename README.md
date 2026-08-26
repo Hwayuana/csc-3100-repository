@@ -1,0 +1,2 @@
+# This downloads the new commit and merges it locally
+git pull
