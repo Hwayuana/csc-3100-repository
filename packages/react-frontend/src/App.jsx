@@ -1,3 +1,5 @@
+
+
 import { useState } from 'react'
 import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
@@ -18,7 +20,7 @@ function App() {
         <div>
           <h1>Get started</h1>
           <p>
-            Edit <code>src/App.jsx</code> Hello World! <code>HMR</code>
+            Edit <code>src/App.jsx</code> Amy Kyte <code>HMR</code>
           </p>
         </div>
         <button
