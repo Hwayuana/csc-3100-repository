@@ -67,22 +67,25 @@ const deleteUserById = (id) => {
   }
   return users["users_list"].splice(index, 1);
 };
-
+ 
 app.delete("/users/:id", (req, res) => {
   const deleteUser = deleteUserById(req.params["id"]);
-  let result = deleteUserById(req.params["id"]);
   if (deleteUser === undefined) {
     return res.status(404).send("Resource not found.");
   } else {
-    res.send(result);
+    res.send(deleteUser);
   }
 });
 // END DELETE
 
 app.post("/users", (req, res) => {
   const userToAdd = req.body;
+  if (userToAdd.id === undefined){
+    const randomID = String(Math.floor(Math.random()*1000000));
+    userToAdd.id = randomID;
+  }
   addUser(userToAdd);
-  res.send();
+  res.status(201).send(userToAdd);
 });
 
 app.listen(port, () => {
